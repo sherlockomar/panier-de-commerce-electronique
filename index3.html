@@ -23,7 +23,7 @@
         <button id="collapsible" type="button" class="btn btn-outline-primary" title="Ajouter au panier">
           <i class="fas fa-plus-square"></i>
         </button>
-        <button type="button" class="btn btn-outline-primary" title="Supprimer du panier">
+        <button type="button" class="btn btn-outline-primary" title="Supprimer du panier" onclick="del(this)">
           <i class="fas fa-trash"></i>
         </button>
       </div>
@@ -41,20 +41,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th><input type="checkbox" class="checkbox" name="select"></th>
-            <th scope="row">1</th>
-            <td>prod_1</td>
-            <td>340.89</td>
-            <td><input type="text" class="form-control" value="4"></td>
-          </tr>
-          <tr>
-            <th><input type="checkbox" class="checkbox" name="select"></th>
-            <th scope="row">2</th>
-            <td>prod_2</td>
-            <td>44.89</td>
-            <td><input type="text" class="form-control" value="7"></td>
-          </tr>
         </tbody>
       </table>
       <div id="collapsible_content" class="collapsible_content">

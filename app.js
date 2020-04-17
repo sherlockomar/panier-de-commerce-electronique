@@ -9,6 +9,7 @@ coll.addEventListener("click", function(){
     con.style.display = "block";
   }
 })
+document.getElementsByClassName("checkbox")[0].checked=false;
 function checkBoxs(e){
   var checkBoxs = document.getElementsByClassName("checkbox");
   if(e.checked){
@@ -22,7 +23,13 @@ function checkBoxs(e){
     }
   }
 }
-
+function del(e){
+  var checkBoxs = document.querySelectorAll('input[type="checkbox"]:checked');
+  for(var i = 0 ; i < checkBoxs.length ; i++){
+    console.log(checkBoxs[i].name);
+  }
+  view.remove(checkBoxs);
+}
 
 const panierInitial = [
     { ref: "prod_1", prix: 340.89, qte: 4 },
@@ -89,7 +96,7 @@ const panierInitial = [
         var input = document.createElement("input");
         input.setAttribute("type", "checkbox");
         input.setAttribute("class", "checkbox");
-        input.setAttribute("name", "select");
+        input.setAttribute("name", i);
         var th = document.createElement("th");
         th.appendChild(input);
         var row = document.createElement("tr");
@@ -115,6 +122,14 @@ const panierInitial = [
       }
       input = document.getElementById("total");
       input.setAttribute("value", this.panier.getTotal().toFixed(2));
+    }
+    remove(elements){
+      for(var i = elements.length-1 ; i >=0  ; i--){
+        if(elements[i].name != "select"){
+          this.panier.items.splice(elements[i].name,1);
+          elements[i].parentNode.parentNode.remove();
+        }
+      }
     }
   }
 
