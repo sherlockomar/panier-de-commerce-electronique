@@ -1,0 +1,74 @@
+body {
+    background-color: #fcfcfc !important;
+    font-family: 'Muli', sans-serif !important;
+}
+.collapsible_content{
+    display: none;
+    overflow: hidden;
+}
+h1 {
+    margin: 2rem auto !important;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ad1732;
+}
+.btn .fas{
+    color: #252525;
+}
+.btn:hover .fas{
+    color: #ad1732;
+}
+i{
+    margin: .3rem;
+}
+thead th{
+    color: #dddbdb !important;
+    background-color: #252525 !important;
+    border-top-color: #ca2543 !important;
+    border-bottom-color: #ca2543 !important;
+}
+tbody th{
+    color: #ca2543 !important;
+}
+th{
+    max-width: 25% !important;
+}
+tr td:first-child{
+    width: 5% !important;
+}
+tr td:nth-child(1){
+    width: 5% !important;
+}
+tr td:nth-child(3){
+    width: 40% !important;
+}
+tr td:nth-child(4){
+    width: 40% !important;
+}
+tr td:last-child{
+    width: 10% !important;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.input-group-prepend .input-group-text{
+    background-color: #ad1732 !important;
+    border-color: #252525 !important;
+    color: #dddbdb;
+}
+.input-group-append .input-group-text{
+    background-color: #252525 !important;
+    border-color: #ad1732 !important;
+    color: #dddbdb;
+}
+.btn-outline-primary{
+    background-color: #ad1732 !important;
+    border-color: #252525 !important;
+    color: #dddbdb !important;
+}
+.btn-outline-primary:hover{
+    border-color: #ad1732 !important;
+    background-color: #252525 !important;
+}
+.pull-right{
+    margin: 1rem 0px 1rem auto;
+}

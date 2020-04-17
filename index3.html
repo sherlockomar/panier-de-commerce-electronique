@@ -1,97 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classes</title>
-    <!-- ajouter boostrap -->
-  </head>
-  <body>
-    <div class="container-flui">
-      <div class="panier">
-        <table>
-          <thead>
-            <tr>
-              <th>REF</th>
-              <th>PRIX</th>
-              <th>QTE</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- <tr>
-                   <td>val ref</td>
-                   <td>val prix</td>
-                   <td> val qte dans une zone de texte</td>
-                   <td><button>Mettre à jour</button></td>
-               </tr> -->
-          </tbody>
-        </table>
-        <button>Vider le panier</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes</title>
+  <!-- My styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Styles CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://c*dn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- FontAwesome Icons CDN -->
+  <script src="https://kit.fontawesome.com/d9a1d47654.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>Panier de commerce électronique</h1>
+  <div class="container-fluid">
+    <div class="panier">
+      <div class="col-sm-12 text-right mr-0 mb-2">
+        <button id="collapsible" type="button" class="btn btn-outline-primary" title="Ajouter au panier">
+          <i class="fas fa-plus-square"></i>
+        </button>
+        <button type="button" class="btn btn-outline-primary" title="Supprimer du panier">
+          <i class="fas fa-trash"></i>
+        </button>
+       </div>
+      <div>
+        
+      </div> 
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th><input type="checkbox" name="select"></th>
+            <th scope="col">#</th>
+            <th scope="col">Référence<i class="fas fa-angle-up" hidden=""></i><i class="fas fa-angle-down"></i></th>
+            <th scope="col">Prix<i class="fas fa-angle-up"></i><i class="fas fa-angle-down" hidden=""></i></th>
+            <th scope="col">Quantité<i class="fas fa-angle-up"></i><i class="fas fa-angle-down" hidden=""></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><input type="checkbox" name="select"></th>
+            <th scope="row">1</th>
+            <td>prod_1</td>
+            <td>340.98</td>
+            <td><input type="text" class="form-control" value="5"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="collapsible_content" class="collapsible_content">
+        <hr/>
+        <div class="container-fluid">
+          <div class="row">
+            <input type="text" class="form-control col-md-4" placeholder="Référence">
+            <input type="text" class="form-control col-md-4" placeholder="Prix">
+            <input type="text" class="form-control col-md-4" placeholder="Quantité">
+            <button type="button" class="btn btn-outline-primary pull-right col-md-2">Envoyer</button>
+          </div>
+        </div>
       </div>
-      <div class="boutique">
-        <button>Ajouter dans le panier</button>
+      <hr>
+      <div class="input-group col-md-3 pull-right p-0">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Totale: </span>
+        </div>
+        <input type="text" class="form-control" value="5099" disabled>
+        <div class="input-group-append">
+          <span class="input-group-text">MAD</span>
+        </div>
       </div>
     </div>
-    <script>
-      const panierInitial = [
-        { ref: "prod_1", prix: 340.89, qte: 4 },
-        { ref: "prod_2", prix: 44.89, qte: 7 },
-        { ref: "prod_3", prix: 3.9, qte: 9 },
-        { ref: "prod_4", prix: 77.69, qte: 14 },
-        { ref: "prod_5", prix: 66.5, qte: 40 },
-        { ref: "prod_6", prix: 77.89, qte: 3 },
-      ];
+  <!-- My JS -->
+  <script src="app.js"></script>
+</body>
 
-      class Panier {
-        constructor(items = []) {
-          this.items = items;
-        }
-        add(ref, prix, qte = 1) {
-          if (ref === undefined) return;
-          if (prix === undefined) return;
-          this.items.push(new Item(ref, prix, qte));
-        }
-        remove(ref) {
-          const itemIndex = this.items.findIndex((item) => item.ref === ref);
-          if (itemIndex >= 0) this.items.splice(itemIndex, 1);
-        }
-        list() {
-          this.items.forEach((i) => console.log(i));
-        }
-        getItems() {
-          return this.items;
-        }
-
-        sortByPrice() {
-          this.items.sort(this.sf);
-        }
-
-        getTotal() {
-          return this.items
-            .map((i) => i.prix * i.qte)
-            .reduce((acc, st) => (acc += st), 0);
-        }
-        sf(e1, e2) {
-          return e2.prix - e1.prix;
-        }
-        clear() {
-          this.items = [];
-        }
-      }
-      class Item {
-        constructor(r, p, q) {
-          this.ref = r;
-          this.prix = p;
-          this.qte = q;
-        }
-      }
-
-      var panier = new Panier(panierInitial);
-
-      class View {
-        //   constructor()
-      }
-    </script>
-  </body>
 </html>
