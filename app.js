@@ -22,6 +22,8 @@ function checkBoxs(e){
     }
   }
 }
+
+
 const panierInitial = [
     { ref: "prod_1", prix: 340.89, qte: 4 },
     { ref: "prod_2", prix: 44.89, qte: 7 },
@@ -78,8 +80,43 @@ const panierInitial = [
   class View {
     //   constructor()
     constructor(p){
-      this.panier;
+      this.panier = p;
+    }
+    afficher(){
+      //creation du tableau et remplissage
+      var tbody = document.getElementsByTagName("tbody")
+      for(var i = 0 ; i < this.panier.items.length ; i++){
+        var input = document.createElement("input");
+        input.setAttribute("type", "checkbox");
+        input.setAttribute("class", "checkbox");
+        input.setAttribute("name", "select");
+        var th = document.createElement("th");
+        th.appendChild(input);
+        var row = document.createElement("tr");
+        row.appendChild(th);
+        th = document.createElement("th");
+        th.setAttribute("scope", "row");
+        th.innerText = i;
+        row.appendChild(th);
+        var td = document.createElement("td");
+        td.innerText = this.panier.items[i].ref;
+        row.appendChild(td);
+        td = document.createElement("td");
+        td.innerText = this.panier.items[i].prix;
+        row.appendChild(td);
+        input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("class", "form-control");
+        input.setAttribute("value", this.panier.items[i].qte);
+        td = document.createElement("td");
+        td.appendChild(input);
+        row.appendChild(td);
+        tbody[0].appendChild(row);
+      }
+      input = document.getElementById("total");
+      input.setAttribute("value", this.panier.getTotal().toFixed(2));
     }
   }
 
   let view =  new View(new Panier(panierInitial));
+  view.afficher();
