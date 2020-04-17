@@ -9,7 +9,19 @@ coll.addEventListener("click", function(){
     con.style.display = "block";
   }
 })
-
+function checkBoxs(e){
+  var checkBoxs = document.getElementsByClassName("checkbox");
+  if(e.checked){
+    for (var i = 0; i < checkBoxs.length; i++) {
+      checkBoxs[i].checked = true;
+    }
+  }
+  else{
+    for (var i = 0; i < checkBoxs.length; i++) {
+      checkBoxs[i].checked = false;
+    }
+  }
+}
 const panierInitial = [
     { ref: "prod_1", prix: 340.89, qte: 4 },
     { ref: "prod_2", prix: 44.89, qte: 7 },
@@ -63,8 +75,11 @@ const panierInitial = [
     }
   }
 
-  var panier = new Panier(panierInitial);
-
   class View {
     //   constructor()
+    constructor(p){
+      this.panier;
+    }
   }
+
+  let view =  new View(new Panier(panierInitial));

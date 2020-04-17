@@ -36,14 +36,14 @@
         <button type="button" class="btn btn-outline-primary" title="Supprimer du panier">
           <i class="fas fa-trash"></i>
         </button>
-       </div>
+      </div>
       <div>
-        
-      </div> 
+
+      </div>
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th><input type="checkbox" name="select"></th>
+            <th><input type="checkbox" class="checkbox" name="select" onchange="checkBoxs(this)"></th>
             <th scope="col">#</th>
             <th scope="col">Référence<i class="fas fa-angle-up" hidden=""></i><i class="fas fa-angle-down"></i></th>
             <th scope="col">Prix<i class="fas fa-angle-up"></i><i class="fas fa-angle-down" hidden=""></i></th>
@@ -52,16 +52,23 @@
         </thead>
         <tbody>
           <tr>
-            <th><input type="checkbox" name="select"></th>
+            <th><input type="checkbox" class="checkbox" name="select"></th>
             <th scope="row">1</th>
             <td>prod_1</td>
-            <td>340.98</td>
-            <td><input type="text" class="form-control" value="5"></td>
+            <td>340.89</td>
+            <td><input type="text" class="form-control" value="4"></td>
+          </tr>
+          <tr>
+            <th><input type="checkbox" class="checkbox" name="select"></th>
+            <th scope="row">2</th>
+            <td>prod_2</td>
+            <td>44.89</td>
+            <td><input type="text" class="form-control" value="7"></td>
           </tr>
         </tbody>
       </table>
       <div id="collapsible_content" class="collapsible_content">
-        <hr/>
+        <hr />
         <div class="container-fluid">
           <div class="row">
             <input type="text" class="form-control col-md-4" placeholder="Référence">
@@ -82,8 +89,8 @@
         </div>
       </div>
     </div>
-  <!-- My JS -->
-  <script src="app.js"></script>
+    <!-- My JS -->
+    <script src="app.js"></script>
 </body>
 
 </html>
