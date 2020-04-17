@@ -23,7 +23,7 @@
         <button id="collapsible" type="button" class="btn btn-outline-primary" title="Ajouter au panier">
           <i class="fas fa-plus-square"></i>
         </button>
-        <button type="button" class="btn btn-outline-primary" title="Supprimer du panier" onclick="del(this)">
+        <button type="button" class="btn btn-outline-primary" title="Supprimer du panier" onclick="supprimer(this)">
           <i class="fas fa-trash"></i>
         </button>
       </div>
@@ -50,7 +50,7 @@
             <input type="text" class="form-control col-md-4" placeholder="Référence">
             <input type="text" class="form-control col-md-4" placeholder="Prix">
             <input type="text" class="form-control col-md-4" placeholder="Quantité">
-            <button type="button" class="btn btn-outline-primary pull-right col-md-2">Envoyer</button>
+            <button type="button" class="btn btn-outline-primary pull-right col-md-2" onclick="ajouter(this)">Envoyer</button>
           </div>
         </div>
       </div>

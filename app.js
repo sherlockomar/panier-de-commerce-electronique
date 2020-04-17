@@ -23,12 +23,19 @@ function checkBoxs(e){
     }
   }
 }
-function del(e){
+function supprimer(e){
   var checkBoxs = document.querySelectorAll('input[type="checkbox"]:checked');
   for(var i = 0 ; i < checkBoxs.length ; i++){
     console.log(checkBoxs[i].name);
   }
   view.remove(checkBoxs);
+}
+
+function ajouter(e){
+  var qte =  e.previousElementSibling.value;
+  var prix = e.previousElementSibling.previousElementSibling.value;
+  var ref = e.previousElementSibling.previousElementSibling.previousElementSibling.value;
+  view.add(ref, prix, qte);
 }
 
 const panierInitial = [
@@ -130,6 +137,9 @@ const panierInitial = [
           elements[i].parentNode.parentNode.remove();
         }
       }
+    }
+    add(r, p, q){
+      this.panier.add(r,p,q);
     }
   }
 
